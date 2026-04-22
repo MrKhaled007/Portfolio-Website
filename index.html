@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohammed Khaled Portfolio</title>
+  <meta name="description"
+    content="Mohammed Khaled — Junior Data Analyst & BI Developer based in Brussels. Final-year Data Science student building dashboards, ML pipelines, and AI agents. Open to roles in Luxembourg & Brussels." />
+  <meta name="theme-color" content="#0E0E10" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mohammed Khaled — Data Analyst & BI Developer" />
+  <meta property="og:description"
+    content="Final-year Data Science student turning messy data into decisions. Power BI, Python, ML, and AI agents." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.vercel.app/" />
+  <!-- TODO: replace — add a 1200x630 og-image.png to the repo root -->
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mohammed Khaled — Data Analyst & BI Developer" />
+  <meta name="twitter:description" content="Final-year Data Science student turning messy data into decisions." />
+  <meta name="twitter:image" content="/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>
+    // Set theme before paint to avoid FOUC.
+    (function () {
+      try {
+        var stored = localStorage.getItem('mk-theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'retro' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav" data-state="top">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand" aria-label="Mohammed Khaled — home">
+        <span class="nav__mark" aria-hidden="true">MK</span>
+        <span class="nav__name">mohammed khaled</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">// about</a>
+        <a href="#work">// projects</a>
+        <a href="#now">// now</a>
+        <!-- <a href="uses.html">// uses</a> -->
+        <a href="#contact">// contact</a>
+      </nav>
+
+      <div class="nav__right">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+        </button>
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu"
+          aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" id="mobileMenu" hidden>
+    <nav class="menu__links" aria-label="Mobile">
+      <a href="#about">// about</a>
+      <a href="#work">// work</a>
+      <a href="#now">// now</a>
+      <a href="uses.html">// uses</a>
+      <a href="#contact">// contact</a>
+    </nav>
+    <div class="menu__foot">brussels · open to lux</div>
+  </div>
+
+  <main id="main">
+
+    <!-- ───────────── HERO ───────────── -->
+    <section class="hero" id="top" aria-label="Intro">
+      <div class="hero__scanlines" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="hero__label mono">// 00 — intro</div>
+        <h1 class="hero__name">Mohammed<br />Khaled.</h1>
+        <p class="hero__role mono"> aspiring agentic AI engineer &nbsp;·&nbsp; data scientist &nbsp;·&nbsp; bi developer
+          &nbsp;·&nbsp; data analyst &nbsp;·&nbsp; ML
+          Engineer
+        </p>
+        <p class="hero__tagline">
+          <span id="typed" aria-live="polite"></span><span class="caret" aria-hidden="true">▌</span>
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#work">view work <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="public/cv.pdf" download>resume <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero__meta mono">
+          <!-- <span>brussels, be</span>
+          <span class="dot" aria-hidden="true">·</span>
+          <span>open to luxembourg</span>
+          <span class="dot" aria-hidden="true">·</span> -->
+          <span class="status"><span class="status__dot"></span> available</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider mono" aria-hidden="true">── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── ·
+      ──</div>
+
+    <!-- ───────────── ABOUT ───────────── -->
+    <section class="section" id="about" aria-labelledby="about-h">
+      <div class="section__label mono">// 01 — about</div>
+      <div class="about">
+        <h2 class="section__title" id="about-h">Built on ML, sharpened by analytics, moving into agentic AI.</h2>
+        <div class="about__body">
+          <p>
+            I'm a final-year BSc Data Science, Protection &amp; Security student at Thomas More University Mechelen,
+            graduating September 2026. My work sits at the intersection of analytics, business intelligence, and
+            applied machine learning. The kind that translates directly into decisions.
+          </p>
+          <p>
+            Last year I interned at <strong>Agiliz</strong>, shipping Looker interactive dashboards and leads generation
+            pipeline creation. Since then, I've been building on my own: agentic research tools,
+            early-warning systems, and weekend experiments with LLMs.
+          </p>
+          <p>
+            With amazing control over English, I write clean SQL, opinionated DAX, and care more
+            about reproducibility than dashboards that demo well.
+          </p>
+        </div>
+
+        <dl class="about__facts mono">
+          <div>
+            <dt>based</dt>
+            <dd>brussels, be</dd>
+          </div>
+          <div>
+            <dt>study</dt>
+            <dd>thomas more mechelen</dd>
+          </div>
+          <div>
+            <dt>interned</dt>
+            <dd>agiliz</dd>
+          </div>
+          <div>
+            <dt>graduation</dt>
+            <dd>sept 2026</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ───────────── NOW ───────────── -->
+    <section class="section" id="now" aria-labelledby="now-h">
+      <div class="section__label mono">// 02 — currently</div>
+      <h2 class="section__title" id="now-h">now.txt</h2>
+
+      <article class="terminal" aria-label="Current status">
+        <header class="terminal__bar">
+          <div class="terminal__lights" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="terminal__path mono">~/mk/now.txt</div>
+          <div class="terminal__meta mono">last edited · today</div>
+        </header>
+        <pre class="terminal__body mono"><code><span class="t-comment"># currently working on</span>
+<span class="t-badge t-run">●</span> <span class="t-key">building</span>  <span class="t-val">BE-Meds EWS</span>          <span class="t-dim">— belgium medicine shortage early-warning system</span>
+
+<span class="t-comment"># recently shipped</span>
+<span class="t-badge t-ok">✓</span> <span class="t-key">shipped</span>   <span class="t-val">MatterMind</span>    <span class="t-dim">— microsoft copilot agent for materials discovery</span>
+
+<span class="t-comment"># reading / learning</span>
+<span class="t-badge t-rd">→</span> <span class="t-key">learning</span>  <span class="t-val">Microsoft Copilot Studio · LangChain · Agentic A.I. · Model Context Protocol</span>
+
+<span class="t-dim">EOF</span></code></pre>
+      </article>
+    </section>
+
+    <!-- ───────────── SKILLS ───────────── -->
+    <section class="section" id="skills" aria-labelledby="skills-h">
+      <div class="section__label mono">// 03 — toolbox</div>
+      <h2 class="section__title" id="skills-h">Skills &amp; stack.</h2>
+
+      <div class="skills">
+        <div class="skills__group">
+          <div class="skills__head mono">data &amp; bi</div>
+          <ul class="tags" role="list">
+            <li class="tag">Power BI</li>
+            <li class="tag">DAX</li>
+            <li class="tag">SQL</li>
+            <li class="tag">Excel</li>
+            <li class="tag">Looker</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <div class="skills__head mono">python &amp; ml</div>
+          <ul class="tags" role="list">
+            <li class="tag">Python</li>
+            <li class="tag">Scikit-learn</li>
+            <li class="tag">XGBoost</li>
+            <li class="tag">TensorFlow</li>
+            <li class="tag">SHAP</li>
+            <li class="tag">Prophet</li>
+            <li class="tag">PySpark</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <div class="skills__head mono">ai &amp; agents</div>
+          <ul class="tags" role="list">
+            <li class="tag">Claude</li>
+            <li class="tag">Microsoft Copilot Studio</li>
+            <li class="tag">MCP</li>
+            <li class="tag">Claude Code</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <div class="skills__head mono">cloud &amp; infra</div>
+          <ul class="tags" role="list">
+            <li class="tag">GCP</li>
+            <li class="tag">Docker</li>
+            <li class="tag">Git</li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider mono" aria-hidden="true">── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── ·
+      ──</div>
+
+    <!-- ───────────── PROJECTS ───────────── -->
+    <section class="section" id="work" aria-labelledby="work-h">
+      <div class="section__label mono">// 04 — projects</div>
+      <h2 class="section__title" id="work-h">Selected works.</h2>
+
+      <div class="projects">
+
+        <article class="project">
+          <header class="project__head">
+            <div class="project__idx mono">01</div>
+            <h3 class="project__name">MatterMind</h3>
+            <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
+          </header>
+          <p class="project__desc">Microsoft Copilot Studio agent that enables researchers, engineers, and students to
+            query sustainable material alternatives using natural language.
+            The agent is powered by a Python ML backend, real scientific data from the Materials Project database
+            (150,000+ materials), and SHAP-based explainable AI.</p>
+          <ul class="chips" role="list">
+            <li class="chip mono">python</li>
+            <li class="chip mono">microsoft copilot studio</li>
+            <li class="chip mono">microsoft power apps</li>
+            <li class="chip mono">ml</li>
+          </ul>
+          <!-- <details class="project__more">
+            <summary class="mono">read more →</summary>
+            <p>Pipeline combines a vector index over paper abstracts with a retrieval-grounded agent that proposes
+              screening criteria. Users chat with the agent, then drill into recommendations through a Power BI
+              dashboard connected to the same knowledge base. Currently iterating on the scoring model and dashboard
+              layout.</p>
+          </details> -->
+          <footer class="project__foot">
+            <a class="ilink mono" href="https://github.com/MrKhaled007/materials-discovery-copilot" target="_blank"
+              rel="noopener">github ↗</a>
+            <!-- TODO: replace with the real repo URL -->
+          </footer>
+        </article>
+
+        <article class="project">
+          <header class="project__head">
+            <div class="project__idx mono">02</div>
+            <h3 class="project__name">ESM Middle Office Dashboard</h3>
+            <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
+          </header>
+          <p class="project__desc">Investment and risk dashboard built for the European Stability Mechanism, the
+            eurozone's rescue fund.
+            Consolidates position, exposure, and performance data across multiple facilities into a single decision
+            surface for Middle Office analysts.</p>
+          <ul class="chips" role="list">
+            <li class="chip mono">python</li>
+            <li class="chip mono">ml</li>
+            <li class="chip mono">power bi</li>
+            <li class="chip mono">dax</li>
+            <li class="chip mono">sql</li>
+          </ul>
+          <details class="project__more">
+            <summary class="mono">read more →</summary>
+            <p>Python pipeline ingests fund and counterparty data into a SQLite warehouse, which powers three Power BI
+              dashboards themed in ESM's visual identity.
+              Drill-through flows let analysts move from portfolio-level KPIs down to individual positions, with careful
+              attention to DAX performance on large position tables.</p>
+          </details>
+          <footer class="project__foot">
+            <a class="ilink mono" href="https://github.com/MrKhaled007/ESM-Middle-Office-Project" target="_blank"
+              rel="noopener">github ↗</a>
+          </footer>
+        </article>
+
+        <article class="project">
+          <header class="project__head">
+            <div class="project__idx mono">03</div>
+            <h3 class="project__name">A.I Chess Bot</h3>
+            <span class="project__status mono"><span class="dot dot--orange"></span> archived</span>
+          </header>
+          <p class="project__desc">Machine learning chess engine trained on the Lichess game database to predict
+            grandmaster-style moves from board positions. Built as a university exam project to explore multi-class
+            classification at scale and the practical limits of classical ML on a structured-but-enormous decision
+            space.</p>
+          <ul class="chips" role="list">
+            <li class="chip mono">python</li>
+            <li class="chip mono">scikit-learn</li>
+            <li class="chip mono">sgd</li>
+            <li class="chip mono">python-chess</li>
+            <li class="chip mono">lichess-bot</li>
+          </ul>
+          <details class="project__more">
+            <summary class="mono">read more →</summary>
+            <p>PGN games are parsed into (position, move) pairs, encoded as feature vectors, and fed into an
+              SGDClassifier trained incrementally on batches too large to fit in memory. A LabelEncoder maps thousands
+              of legal UCI moves to class targets, and the trained model plugs into the lichess-bot framework as a
+              homemade engine. Runs locally against Lichess opponents; not currently deployed.</p>
+          </details>
+          <footer class="project__foot">
+            <a class="ilink mono" href="https://github.com/MrKhaled007/Ai_Chess_Exam" target="_blank"
+              rel="noopener">github ↗</a>
+            <!-- TODO: replace with the real repo URL -->
+          </footer>
+        </article>
+
+
+        <article class="project">
+          <header class="project__head">
+            <div class="project__idx mono">04</div>
+            <h3 class="project__name">MCP Data Cleaner</h3>
+            <span class="project__status mono"><span class="dot dot--orange"></span> archived</span>
+          </header>
+          <p class="project__desc">First hands-on MCP server build — exposes a pandas-based data-cleaning pipeline as a
+            tool that any MCP-compatible LLM (Claude, GPT, local models) can call to clean tabular data on demand. Built
+            to learn the Model Context Protocol end-to-end, from server definition to tool invocation.</p>
+          <ul class="chips" role="list">
+            <li class="chip mono">python</li>
+            <li class="chip mono">mcp</li>
+            <li class="chip mono">pandas</li>
+            <li class="chip mono">claude</li>
+          </ul>
+          <details class="project__more">
+            <summary class="mono">read more →</summary>
+            <p>The server wraps a cleaning routine that drops duplicates, imputes missing values with median for numeric
+              columns and mode for categorical, and returns a log of every transformation applied. Deliberately kept the
+              cleaning logic simple to focus the project on the MCP layer: tool registration with @mcp.tool(),
+              type-annotated inputs, and structured string outputs that LLMs can parse and reason about. A CLI agent
+              wrapper provides a non-MCP fallback for local testing.</p>
+          </details>
+          <footer class="project__foot">
+            <!-- <a class="ilink mono" href="https://github.com/MrKhaled007/Ai_Chess_Exam" target="_blank"
+              rel="noopener">github ↗</a> -->
+            <!-- TODO: replace with the real repo URL -->
+          </footer>
+        </article>
+
+
+        <article class="project">
+          <header class="project__head">
+            <div class="project__idx mono">05</div>
+            <h3 class="project__name">BE-Meds EWS</h3>
+            <span class="project__status mono"><span class="dot dot--teal"></span> in progress</span>
+          </header>
+          <p class="project__desc">Belgium Medicine Shortage Early-Warning System. Forecasts stock-out risk per molecule
+            using public FAGG feeds, wholesaler data, and seasonality signals.</p>
+          <ul class="chips" role="list">
+            <li class="chip mono">python</li>
+            <li class="chip mono">prophet</li>
+            <li class="chip mono">xgboost</li>
+            <li class="chip mono">streamlit</li>
+          </ul>
+          <details class="project__more">
+            <summary class="mono">read more →</summary>
+            <p>Ensemble of a baseline Prophet model and an XGBoost model over engineered features (dispensing volume,
+              lagged shortages, substitution graph). SHAP explanations surface which signals drive each alert. Deployed
+              as a Streamlit app with a weekly ETL job.</p>
+          </details>
+          <footer class="project__foot">
+            <!-- <a class="ilink mono" href="https://github.com/MrKhaled007" target="_blank" rel="noopener">github ↗</a> -->
+            <!-- TODO: replace with the real repo URL -->
+          </footer>
+        </article>
+
+        <!-- TODO: replace — placeholder project card
+        <article class="project">
+          <header class="project__head">
+            <div class="project__idx mono">04</div>
+            <h3 class="project__name">Project name</h3>
+            <span class="project__status mono"><span class="dot dot--muted"></span> status</span>
+          </header>
+          <p class="project__desc">One-line description.</p>
+          <ul class="chips" role="list">
+            <li class="chip mono">tech</li>
+          </ul>
+          <details class="project__more">
+            <summary class="mono">read more →</summary>
+            <p>Longer writeup.</p>
+          </details>
+          <footer class="project__foot">
+            <a class="ilink mono" href="#">github ↗</a>
+          </footer>
+        </article>
+        -->
+
+        <!-- TODO: replace — placeholder project card
+        <article class="project">
+          <header class="project__head">
+            <div class="project__idx mono">05</div>
+            <h3 class="project__name">Project name</h3>
+            <span class="project__status mono"><span class="dot dot--muted"></span> status</span>
+          </header>
+          <p class="project__desc">One-line description.</p>
+          <ul class="chips" role="list">
+            <li class="chip mono">tech</li>
+          </ul>
+          <details class="project__more">
+            <summary class="mono">read more →</summary>
+            <p>Longer writeup.</p>
+          </details>
+          <footer class="project__foot">
+            <a class="ilink mono" href="#">github ↗</a>
+          </footer>
+        </article>
+        -->
+
+      </div>
+    </section>
+
+    <!-- ───────────── CERTS ───────────── -->
+    <section class="section" id="certs" aria-labelledby="certs-h">
+      <div class="section__label mono">// 05 — certifications</div>
+      <h2 class="section__title" id="certs-h">Ongoing &amp; Completed.</h2>
+
+      <ul class="certs mono" role="list">
+        <li><span class="certs__name">A.I Agents Course</span> <span class="certs__sep">·</span> <span
+            class="certs__iss">Hugging Face</span> <span class="certs__sep">·<span class="project__status mono"><span
+                class="dot dot--teal"></span> in progress</span></span> <span class="certs__yr">2026</span></li>
+        <li><span class="certs__name">Microsoft Applied Skills: Create agents in Microsoft Copilot Studio</span> <span
+            class="certs__sep">·</span> <span class="certs__iss">Microsoft</span> <span class="certs__sep">·<span
+              class="project__status mono"><span class="dot dot--teal"></span> in progress</span></span> <span
+            class="certs__yr">2026</span></li>
+        <li><span class="certs__name">McKinsey Forward Programme</span> <span class="certs__sep">·</span> <span
+            class="certs__iss">McKinsey &amp; Co.</span> <span class="certs__sep">·<span
+              class="project__status mono"><span class="dot dot--teal"></span> in progress</span></span> <span
+            class="certs__yr">2026</span></li>
+        <li><span class="certs__name">Introduction to MCP</span> <span class="certs__sep">·</span> <span
+            class="certs__iss">Anthropic</span> <span class="certs__sep">·</span> <span class="certs__yr">2026</span>
+        </li>
+        <li><span class="certs__name">Claude Code in Action</span> <span class="certs__sep">·</span> <span
+            class="certs__iss">Anthropic</span> <span class="certs__sep">·</span> <span class="certs__yr">2026</span>
+        </li>
+        <li><span class="certs__name">Python for Data Science, A.I &amp Development</span> <span
+            class="certs__sep">·</span> <span class="certs__iss">Coursera</span> <span class="certs__sep">·</span> <span
+            class="certs__yr">2025</span>
+        </li>
+        <li><span class="certs__name">Analyze and Visualize Looker Data Skill Badge</span> <span
+            class="certs__sep">·</span> <span class="certs__iss">Google</span> <span class="certs__sep">·</span> <span
+            class="certs__yr">2025</span></li>
+        <li><span class="certs__name">Foundations: Data, Data, Everywhere</span> <span class="certs__sep">·</span> <span
+            class="certs__iss">Google</span> <span class="certs__sep">·</span> <span class="certs__yr">2022</span></li>
+      </ul>
+    </section>
+
+    <div class="divider mono" aria-hidden="true">── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── · ── ·
+      ──</div>
+
+    <!-- ───────────── CONTACT ───────────── -->
+    <section class="section section--contact" id="contact" aria-labelledby="contact-h">
+      <div class="section__label mono">// 06 — contact</div>
+      <h2 class="section__title" id="contact-h">Let's talk.</h2>
+      <p class="contact__lede">Actively seeking junior data analyst, BI, and data science positions. Interested in
+        opportunities that align with my technical background. Responses within 24 hours.</p>
+
+      <ul class="contact" role="list">
+        <li>
+          <button class="contact__row" type="button" data-copy="khaledalam893@gmail.com"
+            aria-label="Copy email address to clipboard">
+            <span class="contact__k mono">email</span>
+            <span class="contact__v">khaledalam893@gmail.com</span>
+            <span class="contact__arrow" aria-hidden="true">→</span>
+          </button>
+        </li>
+        <li>
+          <a class="contact__row" href="https://www.linkedin.com/in/mohammed-khaled-43a220183/" target="_blank"
+            rel="noopener">
+            <span class="contact__k mono">linkedin</span>
+            <span class="contact__v">Mohammed Khaled</span>
+            <span class="contact__arrow" aria-hidden="true">↗</span>
+          </a>
+          <!-- TODO: replace with real LinkedIn slug -->
+        </li>
+        <li>
+          <a class="contact__row" href="https://github.com/MrKhaled007" target="_blank" rel="noopener">
+            <span class="contact__k mono">github</span>
+            <span class="contact__v">Mohammed Khaled</span>
+            <span class="contact__arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="foot__inner mono">
+      <span>© <span id="year">2026</span> mohammed khaled</span>
+      <span class="foot__mid" aria-hidden="true">·</span>
+      <span>hand-built · vanilla html/css/js</span>
+      <span class="foot__mid" aria-hidden="true">·</span>
+      <span>brussels ↔ luxembourg</span>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="script.js" defer></script>
+
+
+
+
+  <script data-cfasync="false">
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('[data-copy]').forEach(function (btn) {
+        btn.addEventListener('click', async function () {
+          const text = btn.getAttribute('data-copy');
+          const original = btn.querySelector('.contact__v').textContent;
+
+          try {
+            await navigator.clipboard.writeText(text);
+          } catch (err) {
+            // Fallback for older browsers or insecure contexts
+            const temp = document.createElement('textarea');
+            temp.value = text;
+            temp.style.position = 'fixed';
+            temp.style.opacity = '0';
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+          }
+
+          btn.querySelector('.contact__v').textContent = 'copied ✓';
+          setTimeout(function () {
+            btn.querySelector('.contact__v').textContent = original;
+          }, 1500);
+        });
+      });
+    });
+  </script>
+
+
+
+</body>
+
+</html>

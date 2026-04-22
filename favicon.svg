@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" fill="#0E0E10"></rect>
+  <rect x="1" y="1" width="62" height="62" fill="none" stroke="#262629" stroke-width="1"></rect>
+  <g fill="#FF6B35" font-family="&#39;JetBrains Mono&#39;, ui-monospace, monospace" font-weight="700" font-size="30" text-anchor="middle">
+    <text x="32" y="42" letter-spacing="-1">MK</text>
+  </g>
+</svg>

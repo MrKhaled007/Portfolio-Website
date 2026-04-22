@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>/uses — Mohammed Khaled</title>
+  <meta name="description" content="The exact hardware, software, and data stack Mohammed Khaled uses day-to-day. Fully transparent, no affiliate links." />
+  <meta name="theme-color" content="#0E0E10" />
+  <meta name="color-scheme" content="dark" />
+
+  <meta property="og:title" content="/uses — Mohammed Khaled" />
+  <meta property="og:description" content="The exact hardware, software, and data stack I use day-to-day." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.vercel.app/uses" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('mk-theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'retro' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <style>
+    /* /uses-specific styles layered on top of styles.css */
+    .uses-hero {
+      padding: clamp(120px, 16vh, 160px) var(--pad) clamp(40px, 6vh, 64px);
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .uses-hero__crumb {
+      font-family: var(--f-mono); font-size: 12px; color: var(--muted);
+      margin-bottom: 20px; letter-spacing: 0.02em;
+    }
+    .uses-hero__crumb a { color: var(--muted); }
+    .uses-hero__crumb a:hover { color: var(--accent-1); }
+    .uses-hero h1 {
+      font-family: var(--f-display);
+      font-weight: 700;
+      font-size: clamp(48px, 9vw, 96px);
+      line-height: .95;
+      letter-spacing: -0.035em;
+      margin: 0 0 24px;
+      text-shadow:
+        -0.01em 0 0 var(--chroma-1),
+         0.01em 0 0 var(--chroma-2);
+    }
+    .uses-hero h1 .slash { color: var(--accent-1); }
+    .uses-hero__lede {
+      font-size: 17px;
+      max-width: 60ch;
+      color: color-mix(in oklab, var(--fg) 90%, var(--muted));
+      margin: 0 0 16px;
+      text-wrap: pretty;
+    }
+    .uses-hero__updated {
+      font-family: var(--f-mono); font-size: 12px; color: var(--muted);
+    }
+    .uses-hero__updated .accent { color: var(--accent-2); }
+
+    .uses-grid {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad) clamp(80px, 12vh, 140px);
+      display: grid;
+      gap: 2px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .uses-block {
+      background: var(--bg);
+      padding: 32px clamp(20px, 3vw, 40px);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .uses-block__head {
+      position: sticky;
+      top: 92px;
+    }
+    .uses-block__num {
+      font-family: var(--f-mono);
+      font-size: 11px;
+      color: var(--accent-2);
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .uses-block__title {
+      font-family: var(--f-display);
+      font-weight: 700;
+      font-size: 24px;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+    .uses-block__note {
+      font-family: var(--f-mono);
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 10px;
+      text-wrap: pretty;
+      line-height: 1.6;
+    }
+    .uses-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .uses-item {
+      background: var(--bg);
+      padding: 14px 18px;
+      display: grid;
+      grid-template-columns: 170px 1fr auto;
+      gap: 14px;
+      align-items: baseline;
+      transition: background .15s var(--ease);
+    }
+    .uses-item:hover { background: var(--surface); }
+    .uses-item__name {
+      font-family: var(--f-mono);
+      font-size: 13px;
+      color: var(--accent-1);
+      font-weight: 500;
+    }
+    .uses-item__desc {
+      font-size: 14px;
+      color: color-mix(in oklab, var(--fg) 88%, var(--muted));
+      text-wrap: pretty;
+    }
+    .uses-item__tag {
+      font-family: var(--f-mono);
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: lowercase;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--border);
+      padding: 2px 7px;
+      white-space: nowrap;
+    }
+
+    .uses-foot {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad) clamp(60px, 8vh, 100px);
+    }
+    .uses-foot__card {
+      border: 1px solid var(--border);
+      padding: 28px;
+      display: flex; flex-wrap: wrap;
+      gap: 20px; align-items: center; justify-content: space-between;
+    }
+    .uses-foot__text {
+      font-size: 14px; color: var(--muted); max-width: 60ch;
+      text-wrap: pretty;
+    }
+    .uses-foot__text strong { color: var(--fg); font-weight: 500; }
+
+    @media (max-width: 760px) {
+      .uses-block {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .uses-block__head { position: static; }
+      .uses-item {
+        grid-template-columns: 1fr auto;
+      }
+      .uses-item__desc {
+        grid-column: 1 / -1;
+        order: 3;
+        padding-top: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav" data-state="top">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="Mohammed Khaled — home">
+        <span class="nav__mark" aria-hidden="true">MK</span>
+        <span class="nav__name">mohammed khaled</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#about">// about</a>
+        <a href="index.html#work">// work</a>
+        <a href="index.html#now">// now</a>
+        <a href="uses.html" style="color: var(--accent-1)">// uses</a>
+        <a href="index.html#contact">// contact</a>
+      </nav>
+
+      <div class="nav__right">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" id="mobileMenu" hidden>
+    <nav class="menu__links" aria-label="Mobile">
+      <a href="index.html#about">// about</a>
+      <a href="index.html#work">// work</a>
+      <a href="index.html#now">// now</a>
+      <a href="uses.html">// uses</a>
+      <a href="index.html#contact">// contact</a>
+    </nav>
+    <div class="menu__foot">brussels · open to lux</div>
+  </div>
+
+  <main id="main">
+
+    <section class="uses-hero">
+      <div class="uses-hero__crumb">
+        <a href="index.html">~/mk</a> <span style="opacity:.5">/</span> uses
+      </div>
+      <h1><span class="slash">/</span>uses</h1>
+      <p class="uses-hero__lede">
+        The exact hardware, software, and data stack I use day-to-day. Transparent, no affiliate links,
+        no "sponsored by" rot. Inspired by <a href="https://usesthis.com" target="_blank" rel="noopener" style="color: var(--accent-2)">usesthis.com</a>
+        and every developer who's written one before me.
+      </p>
+      <div class="uses-hero__updated">
+        <span>last updated</span> <span class="accent">april 2026</span>
+      </div>
+    </section>
+
+    <section class="uses-grid" aria-label="Stack">
+
+      <!-- 01 HARDWARE -->
+      <div class="uses-block">
+        <div class="uses-block__head">
+          <div class="uses-block__num">// 01</div>
+          <h2 class="uses-block__title">hardware</h2>
+          <p class="uses-block__note">Keeping it modest until my first full-time contract. I edit, compute, and render on the same machine.</p>
+        </div>
+        <ul class="uses-list" role="list">
+          <li class="uses-item">
+            <span class="uses-item__name">MacBook Air M2</span>
+            <span class="uses-item__desc">13", 16GB / 512GB. Silent, fanless, runs models locally until they don't fit.</span>
+            <span class="uses-item__tag">daily driver</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Dell U2723QE</span>
+            <span class="uses-item__desc">27" 4K IPS. Single-cable hub into the laptop. Enough real estate for SQL on the left, Power BI on the right.</span>
+            <span class="uses-item__tag">display</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Keychron K3 Pro</span>
+            <span class="uses-item__desc">Low-profile, brown switches. Quiet enough for co-working, tactile enough to stay honest.</span>
+            <span class="uses-item__tag">keyboard</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Logitech MX Master 3S</span>
+            <span class="uses-item__desc">Horizontal scroll earns its keep in any spreadsheet wider than the monitor.</span>
+            <span class="uses-item__tag">mouse</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Sony WH-1000XM5</span>
+            <span class="uses-item__desc">Library hours, Brussels trams, and pair-debugging calls.</span>
+            <span class="uses-item__tag">headphones</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Moleskine Cahier + Muji 0.38</span>
+            <span class="uses-item__desc">Every project starts on paper. Boxes, arrows, questions. Then code.</span>
+            <span class="uses-item__tag">analog</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 02 EDITOR & DEV -->
+      <div class="uses-block">
+        <div class="uses-block__head">
+          <div class="uses-block__num">// 02</div>
+          <h2 class="uses-block__title">editor &amp; dev</h2>
+          <p class="uses-block__note">I try to keep the toolchain boring so the problem can be interesting.</p>
+        </div>
+        <ul class="uses-list" role="list">
+          <li class="uses-item">
+            <span class="uses-item__name">VS Code</span>
+            <span class="uses-item__desc">Night Owl theme, JetBrains Mono at 13.5px, 1.6 line-height. Vim keybindings extension for light-touch motion.</span>
+            <span class="uses-item__tag">editor</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Claude Code</span>
+            <span class="uses-item__desc">Long-context pair for refactors, notebook cleanup, and rubber-ducking analysis.</span>
+            <span class="uses-item__tag">copilot</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">iTerm2 + zsh + starship</span>
+            <span class="uses-item__desc">Minimal prompt, branch + env indicators only. No emoji.</span>
+            <span class="uses-item__tag">terminal</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">uv</span>
+            <span class="uses-item__desc">Replaced pip + venv + pip-tools in a single binary. Project installs in seconds.</span>
+            <span class="uses-item__tag">python pkg</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">ruff + black</span>
+            <span class="uses-item__desc">Ruff for lint, black for format, pre-commit to enforce. No opinions beyond the defaults.</span>
+            <span class="uses-item__tag">lint/format</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">GitHub + gh CLI</span>
+            <span class="uses-item__desc">Issues first, branches per problem, squash-merge. <code>gh pr create</code> from the terminal.</span>
+            <span class="uses-item__tag">vcs</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 03 DATA STACK -->
+      <div class="uses-block">
+        <div class="uses-block__head">
+          <div class="uses-block__num">// 03</div>
+          <h2 class="uses-block__title">data stack</h2>
+          <p class="uses-block__note">The actual tools that touch client data. Picked for reproducibility over novelty.</p>
+        </div>
+        <ul class="uses-list" role="list">
+          <li class="uses-item">
+            <span class="uses-item__name">Power BI Desktop</span>
+            <span class="uses-item__desc">Primary BI canvas. Semantic models, DAX, Tabular Editor 3 for anything serious.</span>
+            <span class="uses-item__tag">bi</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">DAX Studio</span>
+            <span class="uses-item__desc">Non-negotiable for query profiling and VertiPaq analysis. Catches bad measures before production does.</span>
+            <span class="uses-item__tag">bi</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">DuckDB</span>
+            <span class="uses-item__desc">My go-to local query engine. CSV, Parquet, even Excel — SQL over everything in-process.</span>
+            <span class="uses-item__tag">query</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Polars</span>
+            <span class="uses-item__desc">Moved most notebook wrangling off pandas. Predictable memory, predictable speed.</span>
+            <span class="uses-item__tag">dataframe</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">scikit-learn + XGBoost</span>
+            <span class="uses-item__desc">90% of models I ship. Boring, interpretable, fast to re-train.</span>
+            <span class="uses-item__tag">ml</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">SHAP</span>
+            <span class="uses-item__desc">If a model has business impact, it needs explanations stakeholders can read.</span>
+            <span class="uses-item__tag">ml</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Streamlit</span>
+            <span class="uses-item__desc">Zero-to-prototype for internal tools. Upgrades to a real frontend only when it's earned one.</span>
+            <span class="uses-item__tag">app</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">dbt-core</span>
+            <span class="uses-item__desc">For any project with more than one join. Models, tests, docs — in that order.</span>
+            <span class="uses-item__tag">transform</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 04 AI / AGENTS -->
+      <div class="uses-block">
+        <div class="uses-block__head">
+          <div class="uses-block__num">// 04</div>
+          <h2 class="uses-block__title">ai &amp; agents</h2>
+          <p class="uses-block__note">The stack behind MatterMind and most of my side experiments.</p>
+        </div>
+        <ul class="uses-list" role="list">
+          <li class="uses-item">
+            <span class="uses-item__name">Claude (Sonnet &amp; Haiku)</span>
+            <span class="uses-item__desc">Long-context reasoning and tool use. Haiku for cheap, fast ranking passes.</span>
+            <span class="uses-item__tag">llm</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">LangChain + LangGraph</span>
+            <span class="uses-item__desc">Agent orchestration when a single prompt isn't enough. Used sparingly — most problems want a function, not a graph.</span>
+            <span class="uses-item__tag">framework</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">FAISS</span>
+            <span class="uses-item__desc">Embeddings index for research-paper retrieval. Local, free, fast enough.</span>
+            <span class="uses-item__tag">vector</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Model Context Protocol</span>
+            <span class="uses-item__desc">Writing MCP servers to give agents first-class access to my own data tools.</span>
+            <span class="uses-item__tag">protocol</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 05 CLOUD & INFRA -->
+      <div class="uses-block">
+        <div class="uses-block__head">
+          <div class="uses-block__num">// 05</div>
+          <h2 class="uses-block__title">cloud &amp; infra</h2>
+          <p class="uses-block__note">Small surface area on purpose — I don't want to pay for something I'm not learning from.</p>
+        </div>
+        <ul class="uses-list" role="list">
+          <li class="uses-item">
+            <span class="uses-item__name">GCP</span>
+            <span class="uses-item__desc">BigQuery for scratch warehouses, Cloud Run for Streamlit deploys, GCS for everything in between.</span>
+            <span class="uses-item__tag">cloud</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Vercel</span>
+            <span class="uses-item__desc">This site, plus any landing pages or docs I ship. Zero-config wins.</span>
+            <span class="uses-item__tag">hosting</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Docker</span>
+            <span class="uses-item__desc">Slim Python images, multi-stage builds. Reproducibility first, image size second.</span>
+            <span class="uses-item__tag">container</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">1Password</span>
+            <span class="uses-item__desc">Secrets in the CLI via <code>op run</code>. No more <code>.env</code> files in the home directory.</span>
+            <span class="uses-item__tag">secrets</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 06 WRITING & THINKING -->
+      <div class="uses-block">
+        <div class="uses-block__head">
+          <div class="uses-block__num">// 06</div>
+          <h2 class="uses-block__title">writing &amp; thinking</h2>
+          <p class="uses-block__note">The notebook layer between raw notes and anything a stakeholder sees.</p>
+        </div>
+        <ul class="uses-list" role="list">
+          <li class="uses-item">
+            <span class="uses-item__name">Obsidian</span>
+            <span class="uses-item__desc">Vault synced to a private git repo. Daily notes, project logs, paper highlights.</span>
+            <span class="uses-item__tag">notes</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Excalidraw</span>
+            <span class="uses-item__desc">System diagrams and data flows. Ugly-on-purpose visuals beat pretty-on-purpose ones.</span>
+            <span class="uses-item__tag">diagrams</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Figma</span>
+            <span class="uses-item__desc">Dashboard wireframes before I touch Power BI. Saves more time than it costs.</span>
+            <span class="uses-item__tag">design</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Things 3</span>
+            <span class="uses-item__desc">GTD with a light hand. Inbox, today, projects — nothing more elaborate.</span>
+            <span class="uses-item__tag">tasks</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 07 DESK / AUDIO -->
+      <div class="uses-block">
+        <div class="uses-block__head">
+          <div class="uses-block__num">// 07</div>
+          <h2 class="uses-block__title">desk &amp; audio</h2>
+          <p class="uses-block__note">What the chair looks like when deep work is actually happening.</p>
+        </div>
+        <ul class="uses-list" role="list">
+          <li class="uses-item">
+            <span class="uses-item__name">Flexispot E7</span>
+            <span class="uses-item__desc">Standing desk, used ~30% standing. The budget frame with a plain oak top.</span>
+            <span class="uses-item__tag">desk</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">IKEA Markus</span>
+            <span class="uses-item__desc">Honest chair. Not fancy, not broken, for the full price of a month of transit.</span>
+            <span class="uses-item__tag">chair</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Endel · brain.fm · Nils Frahm</span>
+            <span class="uses-item__desc">Deep-focus rotation. Lyrics during admin, no lyrics during code.</span>
+            <span class="uses-item__tag">focus</span>
+          </li>
+          <li class="uses-item">
+            <span class="uses-item__name">Bialetti 3-cup</span>
+            <span class="uses-item__desc">Moka pot on a small induction ring. Two per day, third on deadline nights.</span>
+            <span class="uses-item__tag">fuel</span>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section class="uses-foot">
+      <div class="uses-foot__card">
+        <p class="uses-foot__text">
+          <strong>Nothing on this page is sponsored.</strong> If something works for me, it's here.
+          If it stops working, it leaves. Swap suggestions are always welcome — send them to
+          <a href="/cdn-cgi/l/email-protection#f38a9c8681b3969e929a9fdd909c9e" style="color: var(--accent-1)"><span class="__cf_email__" data-cfemail="8df4e2f8ffcde8e0ece4e1a3eee2e0">[email&#160;protected]</span></a>.
+        </p>
+        <a class="btn btn--ghost" href="index.html">← back to home</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="foot__inner mono">
+      <span>© <span id="year">2026</span> mohammed khaled</span>
+      <span class="foot__mid" aria-hidden="true">·</span>
+      <span>hand-built · vanilla html/css/js</span>
+      <span class="foot__mid" aria-hidden="true">·</span>
+      <span>brussels ↔ luxembourg</span>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js" defer></script>
+</body>
+</html>
