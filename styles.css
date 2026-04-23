@@ -1003,6 +1003,16 @@ a:hover {
   text-transform: lowercase;
 }
 
+.contact__k {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.contact__k svg {
+  display: block;
+}
+
 .contact__v {
   font-family: var(--f-display);
   font-weight: 500;
