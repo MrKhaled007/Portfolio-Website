@@ -163,11 +163,11 @@
           </div>
           <div>
             <dt>study</dt>
-            <dd>thomas more mechelen</dd>
+            <dd>bachelors in data science, protection & security from thomas more mechelen</dd>
           </div>
           <div>
             <dt>interned</dt>
-            <dd>agiliz</dd>
+            <dd>agiliz B.V.</dd>
           </div>
           <div>
             <dt>graduation</dt>
@@ -194,7 +194,7 @@
 <span class="t-badge t-run">●</span> <span class="t-key">building</span>  <span class="t-val">BE-Meds EWS</span>          <span class="t-dim">— belgium medicine shortage early-warning system</span>
 
 <span class="t-comment"># recently shipped</span>
-<span class="t-badge t-ok">✓</span> <span class="t-key">shipped</span>   <span class="t-val">Fraud Detection System</span>    <span class="t-dim">— End-to-end ML system for credit card fraud detection</span>
+<span class="t-badge t-ok">✓</span> <span class="t-key">shipped</span>   <span class="t-val">PowerBi MCP</span>    <span class="t-dim">— MCP server that lets you talk to a Power BI workspace in plain English</span>
 
 <span class="t-comment"># reading / learning</span>
 <span class="t-badge t-rd">→</span> <span class="t-key">learning</span>  <span class="t-val">Microsoft Copilot Studio · LangChain · Agentic A.I. · Model Context Protocol</span>
@@ -246,6 +246,8 @@
             <li class="tag">GCP</li>
             <li class="tag">Docker</li>
             <li class="tag">Git</li>
+            <li class="tag">Streamlit</li>
+            <li class="tag">MLFlow</li>
 
           </ul>
         </div>
@@ -358,29 +360,35 @@
         <article class="project">
           <header class="project__head">
             <div class="project__idx mono">04</div>
-            <h3 class="project__name">A.I Chess Bot</h3>
-            <span class="project__status mono"><span class="dot dot--orange"></span> archived</span>
+            <h3 class="project__name">Power BI MCP Server</h3>
+            <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
           </header>
-          <p class="project__desc">Machine learning chess engine trained on the Lichess game database to predict
-            grandmaster-style moves from board positions. Built as a university exam project to explore multi-class
-            classification at scale and the practical limits of classical ML on a structured-but-enormous decision
-            space.</p>
+          <p class="project__desc">MCP server that lets you talk to a Power BI workspace in plain English —
+            ask Claude what reports exist, inspect dataset schemas, trace lineage, and
+            generate DAX measures from a natural-language description. No SQL. No DAX
+            knowledge required.</p>
           <ul class="chips" role="list">
             <li class="chip mono">python</li>
-            <li class="chip mono">scikit-learn</li>
-            <li class="chip mono">sgd</li>
-            <li class="chip mono">python-chess</li>
-            <li class="chip mono">lichess-bot</li>
+            <li class="chip mono">mcp</li>
+            <li class="chip mono">power bi</li>
+            <li class="chip mono">dax</li>
+            <li class="chip mono">claude</li>
           </ul>
           <details class="project__more">
             <summary class="mono">read more →</summary>
-            <p>PGN games are parsed into (position, move) pairs, encoded as feature vectors, and fed into an
-              SGDClassifier trained incrementally on batches too large to fit in memory. A LabelEncoder maps thousands
-              of legal UCI moves to class targets, and the trained model plugs into the lichess-bot framework as a
-              homemade engine. Runs locally against Lichess opponents; not currently deployed.</p>
+            <p>Implements all three MCP primitives: nine tools (list, get, search,
+              generate) that Claude calls autonomously; six resources exposed as
+              <code>powerbi://</code> URIs for passive reads; and three pre-built
+              prompt templates for dataset exploration, DAX explanation, and report
+              audits. Ships with realistic mock ESM/finance data so it runs immediately
+              with no credentials — plug in an Azure AD app registration and it
+              switches to a live Power BI workspace automatically. DAX generation calls
+              the Anthropic API with the dataset schema in context; a mock fallback
+              handles the no-credit case gracefully.
+            </p>
           </details>
           <footer class="project__foot">
-            <a class="ilink mono" href="https://github.com/MrKhaled007/Ai_Chess_Exam" target="_blank"
+            <a class="ilink mono" href="https://github.com/MrKhaled007/PowerBi-MCP" target="_blank"
               rel="noopener">github ↗</a>
             <!-- TODO: replace with the real repo URL -->
           </footer>
@@ -506,6 +514,10 @@
             class="certs__iss">McKinsey &amp; Co.</span> <span class="certs__sep">·<span
               class="project__status mono"><span class="dot dot--teal"></span> in progress</span></span> <span
             class="certs__yr">2026</span></li>
+        <li><span class="certs__name">Microsoft Applied Skills: Generate reports with AI research agents</span> <span
+            class="certs__sep">·</span> <span class="certs__iss">Microsoft</span> <span class="certs__sep">·</span>
+          <span class="certs__yr">2026</span>
+        </li>
         <li><span class="certs__name">Introduction to MCP</span> <span class="certs__sep">·</span> <span
             class="certs__iss">Anthropic</span> <span class="certs__sep">·</span> <span class="certs__yr">2026</span>
         </li>
