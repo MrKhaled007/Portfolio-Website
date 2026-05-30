@@ -267,6 +267,53 @@
         <article class="project">
           <header class="project__head">
             <div class="project__idx mono">01</div>
+            <h3 class="project__name">FinAgent Pro</h3>
+            <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
+          </header>
+          <p class="project__desc">Multi-agent AI system that turns a single stock ticker into a full risk-intelligence
+            report.
+            Four agents — Research, Analyst, Judge, Report — plus a ChromaDB memory layer, coordinated by an
+            orchestrator
+            and deployed live on Google Cloud Run. Uses an XGBoost model with SHAP explainability for the risk score,
+            and a self-evaluating Judge agent that scores quality and applies guardrails before the report is delivered.
+          </p>
+          <ul class="chips" role="list">
+            <li class="chip mono">python</li>
+            <li class="chip mono">gemini</li>
+            <li class="chip mono">agentic ai</li>
+            <li class="chip mono">xgboost</li>
+            <li class="chip mono">shap</li>
+            <li class="chip mono">chromadb</li>
+            <li class="chip mono">fastapi</li>
+            <li class="chip mono">docker</li>
+            <li class="chip mono">google cloud run</li>
+          </ul>
+          <details class="project__more">
+            <summary class="mono">read more →</summary>
+            <p>End-to-end agentic pipeline: the Research agent pulls live price data, fundamentals, and news through
+              yfinance and Alpha Vantage, then writes a structured brief with Gemini. The Analyst agent computes RSI,
+              volatility, momentum, P/E, and debt features, runs them through an XGBoost classifier, and uses SHAP to
+              explain which factors drive the score. The Judge agent then evaluates the other agents' output on factual
+              consistency, confidence, and completeness — combined with rule-based guardrails that don't rely on the
+              LLM.
+              The Report agent assembles a styled HTML report with embedded charts. Memory (ChromaDB) caches past
+              analyses for instant repeat runs. Containerised with Docker and deployed to Cloud Run with secrets in
+              Secret Manager and structured logging to Cloud Logging.</p>
+          </details>
+          <footer class="project__foot">
+            <a class="ilink mono" href="https://github.com/MrKhaled007/finagent-pro" target="_blank"
+              rel="noopener">github ↗</a>
+            <a class="ilink mono" href="https://finagent-pro-498031288187.europe-west1.run.app/report/AAPL"
+              target="_blank" rel="noopener">live demo ↗</a>
+          </footer>
+        </article>
+
+
+
+
+        <article class="project">
+          <header class="project__head">
+            <div class="project__idx mono">02</div>
             <h3 class="project__name">MatterMind</h3>
             <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
           </header>
@@ -296,7 +343,7 @@
 
         <article class="project">
           <header class="project__head">
-            <div class="project__idx mono">02</div>
+            <div class="project__idx mono">03</div>
             <h3 class="project__name">Fraud Detection System</h3>
             <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
           </header>
@@ -329,7 +376,7 @@
 
         <article class="project">
           <header class="project__head">
-            <div class="project__idx mono">03</div>
+            <div class="project__idx mono">04</div>
             <h3 class="project__name">ESM Middle Office Dashboard</h3>
             <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
           </header>
@@ -359,7 +406,7 @@
 
         <article class="project">
           <header class="project__head">
-            <div class="project__idx mono">04</div>
+            <div class="project__idx mono">05</div>
             <h3 class="project__name">Power BI MCP Server</h3>
             <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
           </header>
@@ -397,7 +444,7 @@
 
         <article class="project">
           <header class="project__head">
-            <div class="project__idx mono">05</div>
+            <div class="project__idx mono">06</div>
             <h3 class="project__name">MCP Data Cleaner</h3>
             <span class="project__status mono"><span class="dot dot--orange"></span> archived</span>
           </header>
@@ -428,7 +475,7 @@
 
         <article class="project">
           <header class="project__head">
-            <div class="project__idx mono">06</div>
+            <div class="project__idx mono">07</div>
             <h3 class="project__name">BE-Meds EWS</h3>
             <span class="project__status mono"><span class="dot dot--teal"></span> in progress</span>
           </header>
@@ -511,9 +558,11 @@
               class="project__status mono"><span class="dot dot--teal"></span> in progress</span></span> <span
             class="certs__yr">2026</span></li>
         <li><span class="certs__name">McKinsey Forward Programme</span> <span class="certs__sep">·</span> <span
-            class="certs__iss">McKinsey &amp; Co.</span> <span class="certs__sep">·<span
-              class="project__status mono"><span class="dot dot--teal"></span> in progress</span></span> <span
-            class="certs__yr">2026</span></li>
+            class="certs__iss">McKinsey &amp; Co.</span> <span class="certs__sep">·<span class="project__status mono">
+            </span></span><span class="certs__yr">2026</span>
+        </li>
+
+
         <li><span class="certs__name">Microsoft Applied Skills: Generate reports with AI research agents</span> <span
             class="certs__sep">·</span> <span class="certs__iss">Microsoft</span> <span class="certs__sep">·</span>
           <span class="certs__yr">2026</span>
