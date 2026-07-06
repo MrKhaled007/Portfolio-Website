@@ -119,7 +119,7 @@
         </p>
         <div class="hero__cta">
           <a class="btn btn--primary" href="#work">view work <span aria-hidden="true">→</span></a>
-          <a class="btn btn--ghost" href="public/MdKhaled_CV.pdf" download>resume <span aria-hidden="true">↓</span></a>
+          <a class="btn btn--ghost" href="public/cv.pdf" download>resume <span aria-hidden="true">↓</span></a>
         </div>
         <div class="hero__meta mono">
           <!-- <span>brussels, be</span>
@@ -191,13 +191,14 @@
           <div class="terminal__meta mono">last edited · today</div>
         </header>
         <pre class="terminal__body mono"><code><span class="t-comment"># currently working on</span>
-<span class="t-badge t-run">●</span> <span class="t-key">building</span>  <span class="t-val">BE-Meds EWS</span>          <span class="t-dim">— belgium medicine shortage early-warning system</span>
+<span class="t-badge t-run">●</span> <span class="t-key">building</span>  <span class="t-val">ODOO MCP Server v2</span>    <span class="t-dim">— adding manipulative tools using natural language</span>
 
 <span class="t-comment"># recently shipped</span>
-<span class="t-badge t-ok">✓</span> <span class="t-key">shipped</span>   <span class="t-val">PowerBi MCP</span>    <span class="t-dim">— MCP server that lets you talk to a Power BI workspace in plain English</span>
+<span class="t-badge t-ok">✓</span> <span class="t-key">shipped</span>   <span class="t-val">ODOO MCP Server v1</span>    <span class="t-dim">— MCP server that lets you talk to your odoo databse in plain English</span>
+<span class="t-badge t-ok">✓</span> <span class="t-key">contributed</span>   <span class="t-val">OCA PR #1173</span>    <span class="t-dim">— first Odoo Community Association contribution</span>
 
 <span class="t-comment"># reading / learning</span>
-<span class="t-badge t-rd">→</span> <span class="t-key">learning</span>  <span class="t-val">Microsoft Copilot Studio · LangChain · Agentic A.I. · Model Context Protocol</span>
+<span class="t-badge t-rd">→</span> <span class="t-key">learning</span>  <span class="t-val">Odoo ORM · Agentic A.I. · Model Context Protocol</span>
 
 <span class="t-dim">EOF</span></code></pre>
       </article>
@@ -264,9 +265,38 @@
 
       <div class="projects">
 
+
         <article class="project">
           <header class="project__head">
             <div class="project__idx mono">01</div>
+            <h3 class="project__name">Odoo MCP Server</h3>
+            <span class="project__status mono"><span class="dot dot--orange"></span> shipped v1</span>
+          </header>
+          <p class="project__desc">MCP server that connects Claude to a live Odoo 19 ERP — search customers and partners, list sale orders, and check product stock in plain English. Natural language in, safe read-only XML-RPC calls against the Odoo ORM out. Written line by line and tested end-to-end with Claude Desktop.</p>
+          <ul class="chips" role="list">
+            <li class="chip mono">python</li>
+            <li class="chip mono">fastmcp</li>
+            <li class="chip mono">MCP</li>
+            <li class="chip mono">odoo 19</li>
+            <li class="chip mono">xml-rpc</li>
+            <li class="chip mono">pydantic</li>
+            <li class="chip mono">docker</li>
+          </ul>
+          <details class="project__more">
+            <summary class="mono">read more →</summary>
+            <p>Three v1 tools — search_partners, list_sale_orders, and check_stock — run against Odoo's external XML-RPC API with two-step authentication and uid caching, inputs validated with Pydantic. The security model rests on one principle: the tool decides what's safe, not the caller — every tool is read-only and restricted to whitelisted models and fields, so a misbehaving LLM can't be talked into touching anything it shouldn't. Runs against Odoo 19 in Docker (Postgres 16), with configuration handled by Pydantic Settings. Every design decision is documented in a learning journal in the repo.</p>
+          </details>
+          <footer class="project__foot">
+            <a class="ilink mono" href="https://github.com/MrKhaled007/odoo-mcp-server" target="_blank"
+              rel="noopener">github ↗</a>
+            <!-- TODO: replace with the real repo URL -->
+          </footer>
+        </article>
+
+
+        <article class="project">
+          <header class="project__head">
+            <div class="project__idx mono">02</div>
             <h3 class="project__name">FinAgent Pro</h3>
             <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
           </header>
@@ -313,7 +343,7 @@
 
         <article class="project">
           <header class="project__head">
-            <div class="project__idx mono">02</div>
+            <div class="project__idx mono">03</div>
             <h3 class="project__name">MatterMind</h3>
             <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
           </header>
@@ -343,7 +373,7 @@
 
         <article class="project">
           <header class="project__head">
-            <div class="project__idx mono">03</div>
+            <div class="project__idx mono">04</div>
             <h3 class="project__name">Fraud Detection System</h3>
             <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
           </header>
@@ -376,7 +406,7 @@
 
         <article class="project">
           <header class="project__head">
-            <div class="project__idx mono">04</div>
+            <div class="project__idx mono">05</div>
             <h3 class="project__name">ESM Middle Office Dashboard</h3>
             <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
           </header>
@@ -406,7 +436,7 @@
 
         <article class="project">
           <header class="project__head">
-            <div class="project__idx mono">05</div>
+            <div class="project__idx mono">06</div>
             <h3 class="project__name">Power BI MCP Server</h3>
             <span class="project__status mono"><span class="dot dot--orange"></span> shipped</span>
           </header>
@@ -444,7 +474,7 @@
 
         <article class="project">
           <header class="project__head">
-            <div class="project__idx mono">06</div>
+            <div class="project__idx mono">07</div>
             <h3 class="project__name">MCP Data Cleaner</h3>
             <span class="project__status mono"><span class="dot dot--orange"></span> archived</span>
           </header>
@@ -473,31 +503,6 @@
         </article>
 
 
-        <article class="project">
-          <header class="project__head">
-            <div class="project__idx mono">07</div>
-            <h3 class="project__name">BE-Meds EWS</h3>
-            <span class="project__status mono"><span class="dot dot--teal"></span> in progress</span>
-          </header>
-          <p class="project__desc">Belgium Medicine Shortage Early-Warning System. Forecasts stock-out risk per molecule
-            using public FAGG feeds, wholesaler data, and seasonality signals.</p>
-          <ul class="chips" role="list">
-            <li class="chip mono">python</li>
-            <li class="chip mono">prophet</li>
-            <li class="chip mono">xgboost</li>
-            <li class="chip mono">streamlit</li>
-          </ul>
-          <details class="project__more">
-            <summary class="mono">read more →</summary>
-            <p>Ensemble of a baseline Prophet model and an XGBoost model over engineered features (dispensing volume,
-              lagged shortages, substitution graph). SHAP explanations surface which signals drive each alert. Deployed
-              as a Streamlit app with a weekly ETL job.</p>
-          </details>
-          <footer class="project__foot">
-            <!-- <a class="ilink mono" href="https://github.com/MrKhaled007" target="_blank" rel="noopener">github ↗</a> -->
-            <!-- TODO: replace with the real repo URL -->
-          </footer>
-        </article>
 
         <!-- TODO: replace — placeholder project card
         <article class="project">
